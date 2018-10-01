@@ -10,13 +10,14 @@ public class Server {
 	public static void main(String[] args) {
 		try{
 			TTTClass ttt = new TTTClass();
+			TTTClass ttt_obj1 = new TTTClass();
 			
 //			final Registry reg = LocateRegistry.createRegistry(registryPort);
 //			reg.rebind("rmi://localhost:"+registryPort+"/tictactoe",ttt);
 
 			LocateRegistry.createRegistry(registryPort);
 			Naming.rebind("rmi://localhost:"+registryPort+"/tictactoe",ttt);
-
+			
 			System.err.println("Server up");
 			
 	        System.in.read();
